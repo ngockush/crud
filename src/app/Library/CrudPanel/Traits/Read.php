@@ -162,10 +162,6 @@ trait Read
      */
     public function enableDetailsRow()
     {
-        if (! backpack_pro()) {
-            throw new BackpackProRequiredException('Details row');
-        }
-
         $this->setOperationSetting('detailsRow', true);
     }
 
@@ -349,10 +345,6 @@ trait Read
      */
     public function enableExportButtons()
     {
-        if (! backpack_pro()) {
-            throw new BackpackProRequiredException('Export buttons');
-        }
-
         $this->setOperationSetting('exportButtons', true);
         $this->setOperationSetting('showTableColumnPicker', true);
         $this->setOperationSetting('showExportButton', true);
