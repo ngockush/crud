@@ -7,10 +7,11 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class CrudController extends Controller
 {
-    use DispatchesJobs, ValidatesRequests;
+    use DispatchesJobs, ValidatesRequests, AuthorizesRequests;
 
     /**
      * @var \Backpack\CRUD\app\Library\CrudPanel\CrudPanel
