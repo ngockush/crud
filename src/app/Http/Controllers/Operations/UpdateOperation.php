@@ -75,7 +75,7 @@ trait UpdateOperation
         $this->data['title'] = $this->crud->getTitle() ?? trans('backpack::crud.edit').' '.$this->crud->entity_name;
         $this->data['id'] = $id;
 
-        // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
+        // load the view from /resources/views/vendor/hacoidev/crud/ if it exists, otherwise load the one in the package
         return view($this->crud->getEditView(), $this->data);
     }
 

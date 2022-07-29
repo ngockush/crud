@@ -150,7 +150,7 @@ return [
     // All JS and CSS assets defined above have this string appended as query string (?v=string).
     // If you want to manually trigger cachebusting for all styles and scripts,
     // append or prepend something to the string below, so that it's different.
-    'cachebusting_string' => \PackageVersions\Versions::getVersion('backpack/crud'),
+    'cachebusting_string' => \PackageVersions\Versions::getVersion('hacoidev/crud'),
 
     /*
     |--------------------------------------------------------------------------
@@ -295,7 +295,7 @@ return [
     // Tell Backpack to look in more places for component views (like widgets)
     'component_view_namespaces' => [
         'widgets' => [
-            'backpack::widgets', // falls back to 'resources/views/vendor/backpack/base/widgets'
+            'backpack::widgets', // falls back to 'resources/views/vendor/hacoidev/base/widgets'
         ],
     ],
 

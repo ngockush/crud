@@ -107,9 +107,9 @@ class BackpackServiceProvider extends ServiceProvider
 
         // sidebar content views, which are the only views most people need to overwrite
         $backpack_menu_contents_view = [
-            __DIR__.'/resources/views/base/inc/sidebar_content.blade.php'      => resource_path('views/vendor/backpack/base/inc/sidebar_content.blade.php'),
-            __DIR__.'/resources/views/base/inc/topbar_left_content.blade.php'  => resource_path('views/vendor/backpack/base/inc/topbar_left_content.blade.php'),
-            __DIR__.'/resources/views/base/inc/topbar_right_content.blade.php' => resource_path('views/vendor/backpack/base/inc/topbar_right_content.blade.php'),
+            __DIR__.'/resources/views/base/inc/sidebar_content.blade.php'      => resource_path('views/vendor/hacoidev/base/inc/sidebar_content.blade.php'),
+            __DIR__.'/resources/views/base/inc/topbar_left_content.blade.php'  => resource_path('views/vendor/hacoidev/base/inc/topbar_left_content.blade.php'),
+            __DIR__.'/resources/views/base/inc/topbar_right_content.blade.php' => resource_path('views/vendor/hacoidev/base/inc/topbar_right_content.blade.php'),
         ];
         $backpack_custom_routes_file = [__DIR__.$this->customRoutesFilePath => base_path($this->customRoutesFilePath)];
 
@@ -176,8 +176,8 @@ class BackpackServiceProvider extends ServiceProvider
 
     public function loadViewsWithFallbacks()
     {
-        $customBaseFolder = resource_path('views/vendor/backpack/base');
-        $customCrudFolder = resource_path('views/vendor/backpack/crud');
+        $customBaseFolder = resource_path('views/vendor/hacoidev/base');
+        $customCrudFolder = resource_path('views/vendor/hacoidev/crud');
 
         // - first the published/overwritten views (in case they have any changes)
         if (file_exists($customBaseFolder)) {

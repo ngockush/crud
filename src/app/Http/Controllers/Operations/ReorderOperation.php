@@ -65,7 +65,7 @@ trait ReorderOperation
         $this->data['crud'] = $this->crud;
         $this->data['title'] = $this->crud->getTitle() ?? trans('backpack::crud.reorder').' '.$this->crud->entity_name;
 
-        // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
+        // load the view from /resources/views/vendor/hacoidev/crud/ if it exists, otherwise load the one in the package
         return view($this->crud->getReorderView(), $this->data);
     }
 

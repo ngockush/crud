@@ -454,16 +454,16 @@ return [
 
     'view_namespaces' => [
         'buttons' => [
-            'crud::buttons', // falls back to 'resources/views/vendor/backpack/crud/buttons'
+            'crud::buttons', // falls back to 'resources/views/vendor/hacoidev/crud/buttons'
         ],
         'columns' => [
-            'crud::columns', // falls back to 'resources/views/vendor/backpack/crud/columns'
+            'crud::columns', // falls back to 'resources/views/vendor/hacoidev/crud/columns'
         ],
         'fields' => [
-            'crud::fields', // falls back to 'resources/views/vendor/backpack/crud/fields'
+            'crud::fields', // falls back to 'resources/views/vendor/hacoidev/crud/fields'
         ],
         'filters' => [
-            'crud::filters', // falls back to 'resources/views/vendor/backpack/crud/filters'
+            'crud::filters', // falls back to 'resources/views/vendor/hacoidev/crud/filters'
         ],
     ],
 

@@ -37,7 +37,7 @@ class Version extends Command
         $this->line('');
 
         $this->comment('### BACKPACK VERSION:');
-        $this->line(\PackageVersions\Versions::getVersion('backpack/crud'));
+        $this->line(\PackageVersions\Versions::getVersion('hacoidev/crud'));
         $this->line('');
     }
 
