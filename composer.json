@@ -1,5 +1,5 @@
 {
-    "name": "backpack/crud",
+    "name": "hacoidev/crud",
     "type": "library",
     "description": "Quickly build an admin interfaces using Laravel, CoreUI, Bootstrap and jQuery.",
     "keywords": [
@@ -66,9 +66,6 @@
         "test-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text"
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "4.0-dev"
-        },
         "laravel": {
             "providers": [
                 "Backpack\\CRUD\\BackpackServiceProvider"
