@@ -44,12 +44,33 @@
 @push('crud_fields_scripts')
     <!-- include summernote js-->
     @loadOnce('packages/summernote/dist/summernote-bs4.min.js')
+    @loadOnce('packages/summernote/dist/plugin/ckfinder-ext-plugin.js')
     @loadOnce('bpFieldInitSummernoteElement')
+    <script>
+        $(function() {
+            $(`textarea[name="{{ $field['name'] }}"]`).summernote({
+                height: 500,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontname', ['fontname']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'hr']],
+                    ['view', ['fullscreen', 'codeview']],
+                    ['help', ['help']],
+                    ['CKFinder', ['CKFinder']]
+                ]
+            });
+        })
+    </script>
     <script>
         function bpFieldInitSummernoteElement(element) {
              var summernoteOptions = element.data('options');
 
-            let summernotCallbacks = { 
+            let summernotCallbacks = {
                 onChange: function(contents, $editable) {
                     element.val(contents).trigger('change');
                 }
@@ -62,10 +83,10 @@
             element.on('CrudField:enable', function(e) {
                 element.summernote('enable');
             });
-            
+
             summernoteOptions['callbacks'] = summernotCallbacks;
-            
-            element.summernote(summernoteOptions); 
+
+            element.summernote(summernoteOptions);
         }
     </script>
     @endLoadOnce
