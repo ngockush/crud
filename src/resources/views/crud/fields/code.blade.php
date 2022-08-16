@@ -14,25 +14,23 @@
         $crud->markFieldTypeAsLoaded($field);
     @endphp
 
-    @push('crud_fields_styles')
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"
-            integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @endpush
-
     @push('crud_fields_scripts')
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
-            integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.css" />
+        <script>
+            let codeEditors = [];
+            $('.code-editor').each((index, ele) => {
+                codeEditors.push(CodeMirror.fromTextArea(ele, {
+                    mode: "htmlmixed",
+                    lineNumbers: true,
+                }));
+
+            })
+            $('.nav-tabs a').on('shown.bs.tab', function() {
+                codeEditors.forEach(editor => {
+                    editor.refresh();
+                })
+            });
+        </script>
     @endpush
 @endif
-@push('crud_fields_scripts')
-    <script>
-        $(() => {
-            CodeMirror.fromTextArea(document.querySelector('.code-editor-{{ $field['name'] }}'), {
-                mode: "htmlmixed",
-                lineNumbers: true,
-            }).save();
-        })
-    </script>
-@endpush
